@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Functional Requirements
 - สามารถเพิ่ม-ลบ list ได้
 - สามารถแสดงวันครบกำหนดการของ list
@@ -15,4 +16,23 @@ Non-functional Requirements
 - หากมี list ที่อยู่คนละหมวดหมู่ต้องสามารถทำงานรวมกันได้ไม่มีข้อผิดพลาด  (Product Req.)
 - ข้อมูลใน list ต้องไม่สุญหาย  (Product Req./ Reliability Req)
 - การเรียกดู list ต้องตอบสนองรวดเร็วไม่ควรเกิน 5 วิ (Product Req. / Performance Req )
+=======
+﻿Functional Requirements
+- สามารถเพิ่ม-ลบ list ได้
+- สามารถแสดงวันครบกำหนดการของ list
+- สามารถแสดงรายละเอียดข้อมูลของ list ได้
+- มีการแจ้งเตือนความจำล่วงหน้าของ list
+- สามารถแก้ไขความสำคัญของ list ได้ (สูง,กลาง,ต่ำ)
+- สามารถเรียงลำดับความสำคัญของ list ได้
+- สามารถสมัครสมาชิกได้
+- ต้อง log-in เข้าสู่ระบบ
+- สามารถจัดกลุ่มประเภท list ได้ (เจ๋ง!!)
+
+Non-functional Requirements
+- แสดงข้อมูลได้ถูกต้อง( Product Req./Performance)
+- list ต้องเรียงกันเป็นระเบียบ (Product Req./ Usability Req)
+- หากมี list ที่อยู่คนละหมวดหมู่ต้องสามารถทำงานรวมกันได้ไม่มีข้อผิดพลาด  (Product Req.)
+- ข้อมูลใน list ต้องไม่สุญหาย  (Product Req./ Reliability Req)
+- การเรียกดู list ต้องตอบสนองรวดเร็วไม่ควรเกิน 5 วิ (Product Req. / Performance Req )
+>>>>>>> 1627fc6b90c94267eac7288212b9efeec4a7c44c
 - ข้อมูลของผู้ใช้ต้องมีความเป็นส่วนตัว ไม่ถูกเปิดเผย และสามารถดู list ของตนเองได้เท่านั้น  (External Req./Ethical Req)
