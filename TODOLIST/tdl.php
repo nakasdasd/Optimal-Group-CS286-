@@ -133,6 +133,8 @@
 												
 												
 												$re = @$_REQUEST['query'];
+												$Maker = $_SESSION["C_ID"];
+												
 												if($re!=""){
 													$result=mysql_query("SELECT * FROM `list` WHERE `name` = '$re'");
 													while($test = mysql_fetch_array($result))
@@ -155,7 +157,7 @@
 													
 												}
 												else{
-												$result=mysql_query("SELECT * FROM list");
+												$result=mysql_query("SELECT * FROM list WHERE `EmployeeNo` = '$Maker'");
 												while($test = mysql_fetch_array($result))
 													{
 													$id = $test['name'];	

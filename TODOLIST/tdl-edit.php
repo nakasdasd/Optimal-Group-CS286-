@@ -139,7 +139,7 @@ mysql_close($conn);
 										</div>
 										<div class="2u$">
 										  <h6>Due Date</h6>
-										  <input type="date" name="rDate" id="rDate"  value="<?php echo "$rDate" ?>"required  >
+										  <input type="date" name="rDate" id="rDate"  min = <?php echo date("Y-m-d"); ?> value="<?php echo "$rDate" ?>"required  >
 										</div>
 										
 										<div class="6u 12u$">

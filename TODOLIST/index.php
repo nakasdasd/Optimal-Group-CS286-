@@ -6,7 +6,7 @@
 -->
 <?php
 
-	$id =$_REQUEST['error'];
+	@$id =$_REQUEST['error'];
 	if ($id == "99"){
 	$message = "โปรดตรวจสอบข้อมูลของท่านอีกครั้ง!";
 	}
@@ -102,35 +102,35 @@
 									
 									<div class="field half first">
 										<label for="name">UserName</label>
-										<input type="text" name="name" id="name" />
+										<input type="text" name="name" id="name"required />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" />
+										<input type="email" name="email" id="email"required />
 									</div>
 									<div class="field half first">
 										<label for="pass1">Password</label>
-										<input type="password" name="pass1" id="pass1" />
+										<input type="password" name="pass1" id="pass1"required />
 									</div>
 									<div class="field half">
 										<label for="pass2">Re-Password</label>
-										<input type="password" name="pass2" id="pass2" />
+										<input type="password" name="pass2" id="pass2"required />
 									</div>
 									<div class="field half first">
 										<label for="fname">FirstName</label>
-										<input type="text" name="fname" id="fname" />
+										<input type="text" name="fname" id="fname"required />
 									</div>
 									<div class="field half">
 										<label for="lname">LastName</label>
-										<input type="text" name="lname" id="lname" />
+										<input type="text" name="lname" id="lname"required />
 									</div>
 									
 									<div class="field">
 									<label for="demo-category">Type</label>
-												<select name="type" id="type">
+												<select name="type" id="type" required>
 													<option value="">-- Select --</option>
 													<option value="1">User</option>
-													<option value="9">Admin</option>
+													<option value="9" hidden>Admin</option>
 												</select>
 											</div>
 									<ul class="actions">

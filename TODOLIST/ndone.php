@@ -122,8 +122,9 @@
 												
 												
 												$re = @$_REQUEST['query'];
+												$Maker = $_SESSION["C_ID"];
 												if($re!=""){
-													$result=mysql_query("SELECT * FROM `list` WHERE `name` = '$re'");
+													$result=mysql_query("SELECT * FROM `list` WHERE `name` = '$re' && `EmployeeNo` = '$Maker'");
 													while($test = mysql_fetch_array($result))
 													{
 													$id = $test['name'];	
@@ -144,7 +145,7 @@
 													
 												}
 												else{
-												$result=mysql_query("SELECT * FROM list WHERE `done` = 'Pending'");
+												$result=mysql_query("SELECT * FROM list WHERE `done` = 'Pending' && `EmployeeNo` = '$Maker'");
 												while($test = mysql_fetch_array($result))
 													{
 													$id = $test['name'];	

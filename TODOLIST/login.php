@@ -1,9 +1,9 @@
 <?php
 session_start();
 $servername ="localhost";
-$username = "root";
-$password = "";
-$dbname = "tdl";
+$username = "tsthcom_tdl";
+$password = "123456";
+$dbname = "tsthcom_tdl";
 
 $conn = new mysqli($servername,$username,$password,$dbname);
 if($conn->connect_error){

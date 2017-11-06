@@ -103,7 +103,7 @@
 										
 										<div class="2u$">
 										  <h6>Due Date</h6>
-										  <input type="date" name="rDate" id="rDate" value="2017-10-10">
+										   <input type="date" name="rDate" id="rDate"  min = <?php echo date("Y-m-d"); ?> value= <?php echo date("Y-m-d"); ?> required>
 										</div>
 										
 										<div class="6u 12u$">
