@@ -11,6 +11,7 @@ if (!$result)
 		$rName = $test['name'];
 		$rDate = $test['date'];
 		$rMark = $test['detail'];
+		$rPri = $test['priority'];
 		$rDone = $test['done'];
 		
 
@@ -20,9 +21,10 @@ echo "Saved!";
 
 	$rDateS = $_POST['rDate'];
 	$rMarkS = $_POST['rMark'];
+	$rPri = $_POST['rPri'];
 	$rDoneS = $_POST['rDone'];
 
-	$sql ="UPDATE list SET  `date`='$rDateS', `detail`='$rMarkS', `done`='$rDoneS'
+	$sql ="UPDATE list SET  `date`='$rDateS', `detail`='$rMarkS', `done`='$rDoneS', `priority`='$rPri'
 		WHERE `name` = '$id';";
 
 	
@@ -146,6 +148,17 @@ mysql_close($conn);
 											<h6>Detail</h6>
 												<textarea name="rMark" id="rMark"  placeholder="Enter your list-detail" rows="6" required ><?php echo "$rMark" ?></textarea>
 										</div>	
+
+										<div class="6u 12u$">
+											<h6>Priority</h6>
+											<div class="select-wrapper">
+													<select name="rPri" id="rPri"  type="text">
+														<option value="0">Normal</option>	
+														<option value="1">Important</option>	
+														<option value="2">Very Important</option>
+													</select>
+											</div>
+										</div>
 										
 										<div class="6u 12u$">
 											<h6>Status</h6>

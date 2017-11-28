@@ -122,6 +122,7 @@
 													<th>List name</th>
 													<th>Due Date</th>
 													<th>Detail</th>
+													<th>Priority</th>
 													<th>Status</th>
 
 												</tr>
@@ -134,20 +135,50 @@
 												
 												$re = @$_REQUEST['query'];
 												$Maker = $_SESSION["C_ID"];
-												
-												if($re!=""){
-													$result=mysql_query("SELECT * FROM `list` WHERE `name` = '$re'");
+												if($re=="pri"){
+													$result=mysql_query("SELECT * FROM `list` WHERE `EmployeeNo` = '$Maker' ORDER BY priority DESC ");
 													while($test = mysql_fetch_array($result))
 													{
-													$id = $test['name'];	
+													$id = $test['name'];
+													$pri = $test['priority'];
 													echo "<tr align='center'>";	
 													echo"<td><font color='black'>". $test['name']. "</font></td>";
 													echo"<td>" .$test['date']."</td>";
 													echo"<td>" .$test['detail']."</td>";
+													if ($pri== "0") { echo"<td>Normal</td>"; }
+													if ($pri=="1") { echo"<td>Important</td>"; }
+													if ($pri=="2") { echo"<td>Very Important</td>"; }
+													
 													echo"<td>". $test['done']. "</td>";
 													$type = $_SESSION["C_TYPE"];
 													if($type == 9 || $type == 1 ){
-													echo"<td><font color='green'> <a href ='tld-edit.php?ID=$id'>Edit</a></font>";
+													echo"<td><font color='green'> <a href ='tdl-edit.php?ID=$id'>Edit</a></font>";
+													echo"<td><font color='red'> <a href ='del.php?ID=$id&TYPE=list' onclick='return checkDelete()' <center>Delete</center></font></a>";
+													}				
+													echo "</tr>";
+													
+													}
+													
+													
+												}
+												else if($re!=""){
+													$result=mysql_query("SELECT * FROM `list` WHERE `name` = '$re'");
+													while($test = mysql_fetch_array($result))
+													{
+													$id = $test['name'];
+													$pri = $test['priority'];
+													echo "<tr align='center'>";	
+													echo"<td><font color='black'>". $test['name']. "</font></td>";
+													echo"<td>" .$test['date']."</td>";
+													echo"<td>" .$test['detail']."</td>";
+													if ($pri== "0") { echo"<td>Normal</td>"; }
+													if ($pri=="1") { echo"<td>Important</td>"; }
+													if ($pri=="2") { echo"<td>Very Important</td>"; }
+													
+													echo"<td>". $test['done']. "</td>";
+													$type = $_SESSION["C_TYPE"];
+													if($type == 9 || $type == 1 ){
+													echo"<td><font color='green'> <a href ='tdl-edit.php?ID=$id'>Edit</a></font>";
 													echo"<td><font color='red'> <a href ='del.php?ID=$id&TYPE=list' onclick='return checkDelete()' <center>Delete</center></font></a>";
 													}				
 													echo "</tr>";
@@ -161,10 +192,14 @@
 												while($test = mysql_fetch_array($result))
 													{
 													$id = $test['name'];	
+													$pri = $test['priority'];
 													echo "<tr align='center'>";	
 													echo"<td><font color='black'>". $test['name']. "</font></td>";
 													echo"<td>" .$test['date']."</td>";
 													echo"<td>" .$test['detail']."</td>";
+													if ($pri== "0") { echo"<td>Normal</td>"; }
+													if ($pri=="1") { echo"<td>Important</td>"; }
+													if ($pri=="2") { echo"<td>Very Important</td>"; }
 													echo"<td>". $test['done']. "</td>";
 					
 													$type = $_SESSION["C_TYPE"];
@@ -191,7 +226,7 @@
 								<ul class="actions pagination">
 								<center>
 								<?php
-								if($re!="")echo" <li><a href='dipcord.php' class='button big'>All data</a></li>";
+								echo" <li><a href='tdl.php?query=pri#' class='button big'>Priority</a></li>";
 								echo"<li><a href='#' class='button big'>Scroll to top</a></li>";
 								echo"<li><a href='home.php' class='button big'>Go Home</a></li>";
 								?>

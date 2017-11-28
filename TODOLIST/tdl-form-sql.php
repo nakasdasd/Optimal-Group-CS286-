@@ -14,14 +14,14 @@ $rName = $_REQUEST['rName'];
 $rDate = $_REQUEST['rDate'];
 $rMark = $_REQUEST['rMark'];
 $rDone = $_REQUEST['rDone'];
+$rPri = $_REQUEST['rPri'];
 $Maker = $_SESSION["C_ID"];
 
 echo ""+$rDate;
 
 
-$sql ="INSERT INTO list(`name`, `date`, `detail`, `done`, `EmployeeNo`)
-		VALUES('".$rName."','".$rDate."','".$rMark."','".$rDone."','".$Maker."');";
-
+$sql ="INSERT INTO list(`name`, `date`, `detail`, `done`, `priority`, `EmployeeNo`)
+		VALUES('".$rName."','".$rDate."','".$rMark."','".$rDone."','".$rPri."','".$Maker."');";
 		echo " \n $sql";
 if($conn->query($sql)===TRUE){
 	echo "New Records sql Created Successfully";

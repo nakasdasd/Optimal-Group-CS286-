@@ -110,6 +110,17 @@
 											<h6>Detail</h6>
 												<textarea name="rMark" id="rMark" placeholder="Enter your list-detail" rows="6"></textarea>
 										</div>	
+
+										<div class="6u 12u$">
+											<h6>Priority</h6>
+											<div class="select-wrapper">
+													<select name="rPri" id="rPri"  type="text">
+														<option value="0">Normal</option>	
+														<option value="1">Important</option>	
+														<option value="2">Very Important</option>
+													</select>
+											</div>
+										</div>
 										
 										<div class="6u 12u$">
 											<h6>Status</h6>
